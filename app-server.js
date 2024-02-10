@@ -8,6 +8,8 @@ const logger = require('morgan')
 app.use(express.json()) // req.body
 app.use((req, res, next) => {
     res.locals.data = {}
+    res.locals.coolStuff = {}
+    res.locals.role = ''
     next()
 })
 app.use(logger('dev'))

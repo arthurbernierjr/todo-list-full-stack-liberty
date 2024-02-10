@@ -99,9 +99,15 @@ function App() {
   const getTodos = async () => {
     try {
       const response = await fetch('/api/todos');
+      /*
+       look at app-server and see the /api/todos routes
+       go to the routes identify the get request that goes to api/todos
+       review the controllers and see that the controllers respond with
+       an array of todos that are incomplete
+      */
       const foundTodos = await response.json();
-      setTodos(foundTodos.reverse());
-      console.log('hey');
+      // format to a js array or object
+      setTodos(foundTodos.reverse()); // updates state and causes diff algo to run
       const responseTwo = await fetch('/api/todos/completed');
       const foundCompletedTodos = await responseTwo.json();
       setCompletedTodos(foundCompletedTodos.reverse());
@@ -310,7 +316,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.dF90VpCFmFTIHpnHLKQv {
   color: rgba(23, 5, 58, 0.79);
 }
 .dF90VpCFmFTIHpnHLKQv .QxYmIa1HnHqyxrkndPO_ {
-  background-color: rgba(25, 5, 58, 0.8);
+  background-color: rgba(255, 5, 58, 0.8);
   text-transform: uppercase;
   cursor: pointer;
   color: ghostwhite;
@@ -321,7 +327,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.dF90VpCFmFTIHpnHLKQv {
   margin-left: 1rem;
   border: 2px;
   box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);
-}`, "",{"version":3,"sources":["webpack://./src/components/Todo/Todo.module.scss"],"names":[],"mappings":"AAAA;EACI,UAAA;EACA,iBAAA;EACA,4BAAA;AACJ;AAAI;EACI,sCAAA;EACA,yBAAA;EACA,eAAA;EACA,iBAAA;EACA,qBAAA;EACA,eAAA;EACA,gBAAA;EACA,qBAAA;EACA,iBAAA;EACA,WAAA;EACA,0CAAA;AAER","sourcesContent":[".todo {\n    /*! keep */\n    font-size: 1.5rem;\n    color: rgba(23, 5, 58, 0.79);\n    .button {\n        background-color: rgba(25, 5, 58, 0.8);\n        text-transform: uppercase;\n        cursor: pointer;\n        color: ghostwhite;\n        padding: 0.25rem 1rem;\n        font-size: 1rem;\n        font-weight: 700;\n        display: inline-block;\n        margin-left: 1rem;\n        border: 2px;\n        box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/Todo/Todo.module.scss"],"names":[],"mappings":"AAAA;EACI,UAAA;EACA,iBAAA;EACA,4BAAA;AACJ;AAAI;EACI,uCAAA;EACA,yBAAA;EACA,eAAA;EACA,iBAAA;EACA,qBAAA;EACA,eAAA;EACA,gBAAA;EACA,qBAAA;EACA,iBAAA;EACA,WAAA;EACA,0CAAA;AAER","sourcesContent":[".todo {\n    /*! keep */\n    font-size: 1.5rem;\n    color: rgba(23, 5, 58, 0.79);\n    .button {\n        background-color: rgba(255, 5, 58, 0.8);\n        text-transform: uppercase;\n        cursor: pointer;\n        color: ghostwhite;\n        padding: 0.25rem 1rem;\n        font-size: 1rem;\n        font-weight: 700;\n        display: inline-block;\n        margin-left: 1rem;\n        border: 2px;\n        box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"todo": `dF90VpCFmFTIHpnHLKQv`,
@@ -711,4 +717,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.5f79c6bcb1af4eb149e6f628e4f1a2e1.js.map
+//# sourceMappingURL=App.910ef0c464b10a858c93a799a437b7dc.js.map
